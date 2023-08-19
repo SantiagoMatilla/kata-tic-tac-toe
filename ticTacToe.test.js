@@ -12,6 +12,6 @@ describe('tic tac toe game testing', ()=>{
         const expectedResult = [2];
 
         //compare/assert
-        expected(player).toBe(expectedResult);
+        expect(player).toStrictEqual(expectedResult);
     })
 })
