@@ -23,7 +23,6 @@ describe('tic tac toe game testing', ()=>{
         let firstTurn = newGame.getTurn();
         newGame.fillCell(cell);
         let secondTurn = newGame.getTurn();
-        const expectedResult = [2];
 
         //compare/assert
         expect(firstTurn).toBe(!secondTurn);
