@@ -63,5 +63,28 @@ describe('tic tac toe game testing', ()=>{
         expect(playerX).toStrictEqual( expectedResultX );
         expect(playerO).toStrictEqual( expectedResultO );
     })
+
+    test('when a player selects a winning combination, the player wins and the game is over',()=>{
+        //setup
+        const newGame = new TicTacToe();
+
+        //act
+        newGame.fillCell(5);
+        newGame.fillCell(8);
+        newGame.fillCell(3);
+        newGame.fillCell(1);
+        newGame.fillCell(4);
+        let playerX = newGame.getPlayerX();
+        let playerO = newGame.getPlayerO();
+        let turn = newGame.getTurn();
+        expectedResultX = [];
+        expectedResultO = [];
+        expectedResultTurn = true;
+
+        //compare/assert
+        expect(playerX).toStrictEqual( expectedResultX );
+        expect(playerO).toStrictEqual( expectedResultO );
+        expect(turn).toStrictEqual( expectedResultTurn );
+    })
     
 })
