@@ -45,4 +45,23 @@ describe('tic tac toe game testing', ()=>{
         expect(playerO).toStrictEqual( expectedResultO );
     })
     
+    test('a cell can not be selected in the same game ',()=>{
+        //setup
+        const newGame = new TicTacToe();
+
+        //act
+        newGame.fillCell(5);
+        newGame.fillCell(5);
+        newGame.fillCell(6);
+        newGame.fillCell(1);
+        let playerX = newGame.getPlayerX();
+        let playerO = newGame.getPlayerO();
+        expectedResultX = [5,1];
+        expectedResultO = [6];
+
+        //compare/assert
+        expect(playerX).toStrictEqual( expectedResultX );
+        expect(playerO).toStrictEqual( expectedResultO );
+    })
+    
 })
